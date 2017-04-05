@@ -11,9 +11,9 @@ RUN apt-get update \
         jupyterlab ipywidgets qgrid \
         numpy scipy pandas dask \
         scikit-learn nltk \
-        matplotlib plotly bokeh \
-        arrow python-dateutil \
-        JayDeBeApi3 pymongo sqlalchemy \
+        matplotlib plotly \ 
+        # bokeh arrow python-dateutil \
+        JayDeBeApi pymongo sqlalchemy \
         requests Scrapy beautifulsoup4 \
     # jupyter setup	
     && jupyter serverextension enable --py jupyterlab --sys-prefix \
