@@ -12,13 +12,13 @@ RUN apt-get update \
 RUN pip3 install \
         jupyterlab \
         ipywidgets jupyterlab-widgets \
-        plotly jupyterlab_plotly \
+        # plotly jupyterlab_plotly \
         qgrid \
     && jupyter serverextension enable --sys-prefix --py jupyterlab \
     && jupyter labextension install --sys-prefix --py jupyterlab_widgets \
     && jupyter labextension enable --sys-prefix --py jupyterlab_widgets \
-    && jupyter labextension install --sys-prefix --py --symlink jupyterlab_plotly \
-    && jupyter labextension enable --sys-prefix --py jupyterlab_plotly \
+    # && jupyter labextension install --sys-prefix --py --symlink jupyterlab_plotly \
+    # && jupyter labextension enable --sys-prefix --py jupyterlab_plotly \
     && mkdir -p /jupyter 
 
 EXPOSE 8888
