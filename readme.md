@@ -1,6 +1,6 @@
-# JupyterLab
+# dclong/jupyterlab
 
-Jupyter Notebook/Lab with Python 3 and Python 2 (minimal packages). 
+Jupyter Notebook/Lab with Python 3 (many popular packages) and Python 2 (minimal packages). 
 
 ## About the Author
 
