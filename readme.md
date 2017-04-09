@@ -1,6 +1,6 @@
 # dclong/jupyterlab
 
-Jupyter Notebook/Lab with Python 3 (many popular packages) and Python 2 (minimal packages). 
+JupyterLab (in Python 3). 
 
 ## About the Author
 
@@ -9,7 +9,7 @@ Jupyter Notebook/Lab with Python 3 (many popular packages) and Python 2 (minimal
 ## Usage 
 
 ```
-docker run -d -p 8888:8888 -p 8889:8889 \
+docker run -d -p 8888:8888 \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
@@ -17,7 +17,7 @@ docker run -d -p 8888:8888 -p 8889:8889 \
     dclong/jupyterlab
 ```
 ```
-docker run -d -p 8888:8888 -p 8889:8889 \
+docker run -d -p 8888:8888 \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -v $HOME:/jupyter \
