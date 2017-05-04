@@ -7,7 +7,6 @@ RUN yum install -y \
         sudo \
         gcc gcc-c++ \
         python34 python34-devel python34-pip \
-        openssl-devel \
     && yum clean all 
 
 RUN pip3 install \
