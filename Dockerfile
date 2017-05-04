@@ -1,13 +1,14 @@
-FROM ubuntu
+FROM centos
 
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN yum update -y \
+    && yum install -y epel-release 
+
+RUN yum install -y \
         sudo \
-        gcc \
-        python3 python3-pip \
-        python3-all-dev python3-setuptools build-essential python3-wheel \
-    && apt-get autoremove \
-    && apt-get autoclean 
+        gcc gcc-c++ \
+        python34 python34-devel python34-pip \
+        openssl-devel \
+    && yum clean all 
 
 RUN pip3 install \
         jupyterlab \
