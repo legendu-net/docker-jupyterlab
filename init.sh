@@ -4,7 +4,7 @@ USER_ID=${DOCKER_USER_ID:-9001}
 USER=${DOCKER_USER:-dclong}
 PASSWORD=${DOCKER_PASSWORD:-$USER}
 useradd -o -u $USER_ID -d /home/$USER -s /bin/bash -c "$USER" $USER 
-adduser $USER sudo 
+gpasswd -a $USER sudo 
 export HOME=/home/$USER
 mkdir -p $HOME
 chown -R $USER:$USER /home/$USER 
