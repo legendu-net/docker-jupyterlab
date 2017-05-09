@@ -23,6 +23,7 @@ RUN pip3 install \
     && mkdir -p /jupyter 
 
 EXPOSE 8888
+EXPOSE 8889
 
 # ADD jupyter_notebook_config.py /root/.jupyter/
 ADD init.sh /
