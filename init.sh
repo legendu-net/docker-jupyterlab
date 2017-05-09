@@ -11,6 +11,7 @@ chown -R $USER:$USER /home/$USER
 mkdir -p /jupyter
 chown -R $USER:$USER /jupyter
 echo ${USER}:${PASSWORD} | chpasswd
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
 
 su -m $USER && echo $PASSWORD | sudo -S -u $USER ${1:-/script.sh}
 # if [[ "$#" == 0 ]]; then
