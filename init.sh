@@ -1,17 +1,20 @@
 #!/bin/bash
 
+DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
+groupadd -o -g $DOCKER_GROUP_ID docker
+
 USER_ID=${DOCKER_USER_ID:-9001}
 USER=${DOCKER_USER:-dclong}
 PASSWORD=${DOCKER_PASSWORD:-$USER}
-useradd -o -u $USER_ID -d /home/$USER -s /bin/bash -c "$USER" $USER 
-gpasswd -a $USER wheel 
 export HOME=/home/$USER
-mkdir -p $HOME
-chown -R $USER:$USER /home/$USER 
-mkdir -p /jupyter
-chown -R $USER:$USER /jupyter
+useradd -om -u $USER_ID -g docker -d $HOME -s /bin/bash -c "$USER" $USER 
 echo ${USER}:${PASSWORD} | chpasswd
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+gpasswd -a $USER wheel
+
+if [[ ! -d /jupyter ]]; then 
+    mkdir /jupyter
+    chown $USER:docker /jupyter
+fi
 
 su -m $USER && echo $PASSWORD | sudo -S -u $USER ${1:-/script.sh}
 # if [[ "$#" == 0 ]]; then
