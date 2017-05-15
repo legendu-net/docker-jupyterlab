@@ -16,6 +16,7 @@ if [[ ! -d /jupyter ]]; then
     chown $USER:docker /jupyter
 fi
 
+cd $HOME
 su -m $USER && echo $PASSWORD | sudo -S -u $USER ${1:-/script.sh}
 # if [[ "$#" == 0 ]]; then
     # su -m $USER && echo $PASSWORD | sudo -S -u $USER /script.sh

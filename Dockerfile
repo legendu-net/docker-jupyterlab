@@ -1,8 +1,9 @@
 FROM ubuntu
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+    && apt-get install -y \
         sudo \
+        vim git \
         gcc \
         python3 python3-pip \
         python3-all-dev python3-setuptools build-essential python3-wheel \
