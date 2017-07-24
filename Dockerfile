@@ -1,14 +1,4 @@
-FROM ubuntu
-
-RUN apt-get update \
-    && apt-get install -y \
-        sudo \
-        vim git \
-        gcc \
-        python3 python3-pip \
-        python3-all-dev python3-setuptools build-essential python3-wheel \
-    && apt-get autoremove \
-    && apt-get autoclean 
+FROM dclong/python
 
 RUN pip3 install \
         jupyterlab \
