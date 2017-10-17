@@ -17,8 +17,6 @@ EXPOSE 8888
 EXPOSE 8889
 
 # ADD jupyter_notebook_config.py /root/.jupyter/
-ADD init.sh /
-ADD script.sh /
-ADD list.sh /
+ADD scripts /scripts
 
-ENTRYPOINT ["/init.sh"]
+ENTRYPOINT ["/scripts/init.sh"]
