@@ -14,7 +14,6 @@ RUN mkdir -p /jupyter \
     && jupyter nbextension enable --py --sys-prefix widgetsnbextension  
 
 EXPOSE 8888
-EXPOSE 8889
 
 # ADD jupyter_notebook_config.py /root/.jupyter/
 ADD scripts /scripts
