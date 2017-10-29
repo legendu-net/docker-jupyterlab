@@ -1,15 +1,17 @@
 FROM dclong/python
 
-RUN mkdir -p /jupyter \ 
+RUN apt-get install -y --no-install-recommends \
+        nodejs npm \
+    && ln -s /usr/bin/nodejs /usr/bin/node \
     && pip3 install \
         jupyterlab \
         ipywidgets jupyterlab-widgets \
-        # plotly jupyterlab_plotly \
         qgrid \
-    # && jupyter labextension install --sys-prefix --py jupyterlab_widgets \
-    # && jupyter labextension enable --sys-prefix --py jupyterlab_widgets \
+        # plotly jupyterlab_plotly \
     # && jupyter labextension install --sys-prefix --py --symlink jupyterlab_plotly \
     # && jupyter labextension enable --sys-prefix --py jupyterlab_plotly \
+    # && jupyter labextension install --sys-prefix --py jupyterlab_widgets \
+    # && jupyter labextension enable --sys-prefix --py jupyterlab_widgets \
     && jupyter serverextension enable --sys-prefix --py jupyterlab \
     && jupyter nbextension enable --py --sys-prefix widgetsnbextension  
 
