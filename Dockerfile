@@ -3,8 +3,9 @@ FROM dclong/python
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         nodejs npm \
-    && ln -s /usr/bin/nodejs /usr/bin/node \
-    && pip3 install \
+    && ln -s /usr/bin/nodejs /usr/bin/node
+
+RUN pip3 install \
         jupyterlab \
         ipywidgets jupyterlab-widgets \
         qgrid \
@@ -16,9 +17,10 @@ RUN apt-get update \
     && jupyter serverextension enable --sys-prefix --py jupyterlab \
     && jupyter nbextension enable --py --sys-prefix widgetsnbextension  
 
-EXPOSE 8888
-
-# ADD jupyter_notebook_config.py /root/.jupyter/
+RUN mkdir /jupyter && chmod 777 /jupyter
 ADD scripts /scripts
+# ADD jupyter_notebook_config.py /root/.jupyter/
+
+EXPOSE 8888
 
 ENTRYPOINT ["/scripts/init.sh"]
