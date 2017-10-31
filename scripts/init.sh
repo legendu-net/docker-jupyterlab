@@ -7,8 +7,6 @@ DOCKER_GROUP=${DOCKER_GROUP:-docker}
 DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
 /scripts/create_user.sh $DOCKER_USER $DOCKER_USER_ID $DOCKER_PASSWORD $DOCKER_GROUP $DOCKER_GROUP_ID
 
-mkdir -p "$NOTEBOOK_DIR"
-chown $DOCKER_USER:$DOCKER_GROUP "$NOTEBOOK_DIR"
-
-su -m $DOCKER_USER && echo $DOCKER_PASSWORD | sudo -S -u $DOCKER_USER /scripts/launch.sh
-
+export HOME=/home/$DOCKER_USER
+cd $HOME
+su -m $DOCKER_USER -c /scripts/launch.sh &
