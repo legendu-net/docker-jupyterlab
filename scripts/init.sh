@@ -9,4 +9,4 @@ DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
 
 export HOME=/home/$DOCKER_USER
 cd $HOME
-su -m $DOCKER_USER -c /scripts/launch.sh &
+su -m $DOCKER_USER -c /scripts/launch.sh
