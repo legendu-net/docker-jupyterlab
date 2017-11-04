@@ -7,6 +7,6 @@ DOCKER_GROUP=${DOCKER_GROUP:-docker}
 DOCKER_GROUP_ID=${DOCKER_GROUP_ID:-9001}
 /scripts/create_user.sh $DOCKER_USER $DOCKER_USER_ID $DOCKER_PASSWORD $DOCKER_GROUP $DOCKER_GROUP_ID
 
-export HOME=/home/$DOCKER_USER # DOT remove!!! Necessary for it to work.
+export HOME=/home/$DOCKER_USER # do NOT remove!!! Necessary for it to work.
 cd $HOME
 su -m $DOCKER_USER -c /scripts/launch.sh
