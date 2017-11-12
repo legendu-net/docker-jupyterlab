@@ -18,7 +18,8 @@ RUN pip3 install \
     && jupyter nbextension enable --py --sys-prefix widgetsnbextension  
 
 RUN mkdir /jupyter && chmod 777 /jupyter
-ADD scripts /scripts
+COPY scripts /scripts
+COPY settings /settings
 # ADD jupyter_notebook_config.py /root/.jupyter/
 
 EXPOSE 8888
