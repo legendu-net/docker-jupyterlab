@@ -7,4 +7,7 @@ cd $HOME
 codemirror_dir="$HOME/.jupyter/lab/user-settings/@jupyterlab/codemirror-extension"
 mkdir -p "$codemirror_dir"
 cp /settings/commands.json "$codemirror_dir"
-chown -R $DOCKER_USER:$DOCKER_GROUP $HOME
+chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.jupyter
+
+# .local directory
+chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.local
