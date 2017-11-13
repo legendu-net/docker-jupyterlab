@@ -10,4 +10,5 @@ cp /settings/commands.json "$codemirror_dir"
 chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.jupyter
 
 # .local directory
+mkdir -p $HOME/.local/share/jupyter/runtime
 chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.local
