@@ -1,4 +1,4 @@
-# dclong/jupyterlab
+# [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
 
 JupyterLab (in Python 3). 
 
