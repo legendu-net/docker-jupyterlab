@@ -6,7 +6,7 @@ RUN apt-get update \
     && ln -s /usr/bin/nodejs /usr/bin/node
 
 RUN pip3 install \
-        jupyterlab \
+        jupyterlab nbdime \
         ipywidgets jupyterlab-widgets \
         qgrid \
         # plotly jupyterlab_plotly \
