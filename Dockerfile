@@ -5,6 +5,11 @@ RUN apt-get update \
         nodejs npm \
     && ln -s /usr/bin/nodejs /usr/bin/node
 
+RUN npm install -g n \
+    && n 9.2.1 \
+    && ln -sf /usr/local/n/versions/node/9.2.1/bin/node /usr/bin/nodejs \
+    && ln -sf /usr/bin/nodejs /usr/bin/node
+
 RUN pip3 install \
         jupyterlab nbdime \
         ipywidgets jupyterlab-widgets \
