@@ -15,15 +15,6 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
-    -v $HOME:/jupyter \
-    dclong/jupyterlab
-```
-```
-docker run -d \
-    --log-opt max-size=50m \
-    -p 8888:8888 \
-    -e DOCKER_USER=`id -un` \
-    -e DOCKER_USER_ID=`id -u` \
-    -v $HOME:/jupyter \
+    -v /wwwroot:/jupyter \
     dclong/jupyterlab
 ```
