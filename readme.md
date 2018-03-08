@@ -122,7 +122,7 @@ You will be asked for token to login.
 The token can be found using the command below,
 where `container_id` is the name/ID of the launched JupyterLab container.
 ```
-docker exec -u `id -u` container_id jupyter notebook list
+docker exec -u `id -un` container_id jupyter notebook list
 ```
 
 ## Known Issues
