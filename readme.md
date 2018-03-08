@@ -68,6 +68,7 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
+    -e DOCKER_GROUP_ID=`id -g` \
     -v /wwwroot:/jupyter \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
@@ -80,6 +81,7 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
+    -e DOCKER_GROUP_ID=`id -g` \
     -v `pwd`:/jupyter \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
@@ -92,6 +94,7 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
+    -e DOCKER_GROUP_ID=`id -g` \
     -v /wwwroot:/jupyter \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
@@ -104,6 +107,7 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
+    -e DOCKER_GROUP_ID=`id -g` \
     -v `pwd`:/jupyter \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
