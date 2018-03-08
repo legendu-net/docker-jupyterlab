@@ -118,10 +118,12 @@ docker run -d \
 
 Open your browser and and visit `your_host_ip:8888` 
 where `your_host_ip` is the URL/ip address of your server. 
-You will be asked for user name (by default your user name on the host)
-and password (by default your user name on the host and might want to change it for security reasons).
-You can of course change your user password later 
-using the command `passwd` in the container.  
+You will be asked for token to login.
+The token can be found using the command below,
+where `container_id` is the name/ID of the launched JupyterLab container.
+```
+docker exec -u `id -u` container_id jupyter notebook list
+```
 
 ## Known Issues
 
