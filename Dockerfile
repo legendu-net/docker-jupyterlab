@@ -2,10 +2,10 @@ FROM dclong/jupyter
 
 RUN conda install -y -c conda-forge \
         nodejs \
-	jupyterlab \
+        jupyterlab \
     # && jupyter labextension install --sys-prefix --py jupyterlab_widgets \
     # && jupyter labextension enable --sys-prefix --py jupyterlab_widgets \
-    && jupyter labextension install @jupyter-widgets/jupyterlab-manager
+    && jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.34
 
 COPY scripts /scripts
 COPY settings /settings
