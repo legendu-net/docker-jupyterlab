@@ -1,6 +1,7 @@
 FROM dclong/jupyter
 
 RUN conda install -y -c conda-forge \
+        nodejs \
 	jupyterlab \
     # && jupyter labextension install --sys-prefix --py jupyterlab_widgets \
     # && jupyter labextension enable --sys-prefix --py jupyterlab_widgets \
