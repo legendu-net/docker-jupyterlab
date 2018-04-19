@@ -5,7 +5,7 @@ RUN conda install -y -c conda-forge \
         jupyterlab \
     # && jupyter labextension install --sys-prefix --py jupyterlab_widgets \
     # && jupyter labextension enable --sys-prefix --py jupyterlab_widgets \
-    && jupyter labextension install @jupyter-widgets/jupyterlab-manager@0.34
+    && jupyter labextension install @jupyter-widgets/jupyterlab-manager
 
 COPY scripts /scripts
 COPY settings /settings
