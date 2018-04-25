@@ -69,7 +69,7 @@ docker run -d \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
-    -v /wwwroot:/jupyter \
+    -v /wwwroot:/workdir \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     dclong/jupyterlab
@@ -82,7 +82,7 @@ docker run -d \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
-    -v `pwd`:/jupyter \
+    -v `pwd`:/workdir \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     dclong/jupyterlab
@@ -95,7 +95,7 @@ docker run -d \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
-    -v /wwwroot:/jupyter \
+    -v /wwwroot:/workdir \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     registry.docker-cn.com/dclong/jupyterlab
@@ -108,7 +108,7 @@ docker run -d \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
-    -v `pwd`:/jupyter \
+    -v `pwd`:/workdir \
     -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     registry.docker-cn.com/dclong/jupyterlab
