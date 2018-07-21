@@ -96,7 +96,6 @@ docker run -d \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
     -v /wwwroot:/workdir \
-    -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     registry.docker-cn.com/dclong/jupyterlab
 ```
@@ -109,7 +108,6 @@ docker run -d \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
     -v `pwd`:/workdir \
-    -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     registry.docker-cn.com/dclong/jupyterlab
 ```
