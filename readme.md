@@ -7,7 +7,7 @@ for data science related work.**
 
 ## Detailed Information 
 
-OS: the latest Ubuntu LTS  
+OS: Ubuntu 16.04
 Desktop Environment: None  
 Remote Desktop: None  
 Kernels:  
