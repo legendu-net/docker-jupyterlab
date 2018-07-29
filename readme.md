@@ -1,6 +1,6 @@
 # [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
 
-JupyterLab (with Python 3). 
+JupyterLab (with Python 3.5). 
 **It is recommended that you use the image
 [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
 for data science related work.**
