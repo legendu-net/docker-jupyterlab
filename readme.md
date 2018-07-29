@@ -1,17 +1,26 @@
 # [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
 
-JupyterLab (in Python 3). 
+JupyterLab (with Python 3). 
 **It is recommended that you use the image
 [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
 for data science related work.**
+Note: Python packages in this version are managed using pip.
+If you prefer managing Python packages using conda, 
+please use the **conda3** (corresponds to the conda3 tag) branch instead.
 
 ## Detailed Information 
 
-OS: Ubuntu 16.04
+OS: Ubuntu 16.04  
 Desktop Environment: None  
 Remote Desktop: None  
-Kernels:  
-    - Python 3 (with popular packages)  
+Jupyter Notebook: 5.6.0  
+NodeJS: 8.11.3  
+JupyterLab: 0.33.2  
+JupyterHub: 0.9.1  
+OpenJDK 8  
+Maven: 3.3.9  
+Jupyter Kernels:  
+- Python 3.5.2 
 
 ## Usage in Linux/Unix
 
@@ -70,7 +79,6 @@ docker run -d \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
     -v /wwwroot:/workdir \
-    -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     dclong/jupyterlab
 ```
@@ -83,35 +91,8 @@ docker run -d \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
     -v `pwd`:/workdir \
-    -v /wwwroot:/wwwroot \
     -v /home:/home_host \
     dclong/jupyterlab
-```
-```
-docker run -d \
-    --log-opt max-size=50m \
-    -p 8888:8888 \
-    -e DOCKER_USER=`id -un` \
-    -e DOCKER_USER_ID=`id -u` \
-    -e DOCKER_PASSWORD=`id -un` \
-    -e DOCKER_GROUP_ID=`id -g` \
-    -v /wwwroot:/workdir \
-    -v /wwwroot:/wwwroot \
-    -v /home:/home_host \
-    registry.docker-cn.com/dclong/jupyterlab
-```
-```
-docker run -d \
-    --log-opt max-size=50m \
-    -p 8888:8888 \
-    -e DOCKER_USER=`id -un` \
-    -e DOCKER_USER_ID=`id -u` \
-    -e DOCKER_PASSWORD=`id -un` \
-    -e DOCKER_GROUP_ID=`id -g` \
-    -v `pwd`:/workdir \
-    -v /wwwroot:/wwwroot \
-    -v /home:/home_host \
-    registry.docker-cn.com/dclong/jupyterlab
 ```
 
 ## Use the JupyterLab Server
@@ -142,24 +123,29 @@ docker exec -u `id -un` container_id jupyter notebook list
 [dclong/ubuntu_b](https://hub.docker.com/r/dclong/ubuntu_b/)
 
 - [dclong/python](https://hub.docker.com/r/dclong/python/)
-    - [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
-        - [dclong/jupyterlab-ts](https://hub.docker.com/r/dclong/jupyterlab-ts/)
-        - [dclong/jupyterlab-js](https://hub.docker.com/r/dclong/jupyterlab-js/)
-        - [dclong/jupyterlab-beakerx](https://hub.docker.com/r/dclong/jupyterlab-beakerx/)
-        - [dclong/jupyterlab-tdodbc](https://hub.docker.com/r/dclong/jupyterlab-tdodbc/)
-        - [dclong/jupyterlab-jdk](https://hub.docker.com/r/dclong/jupyterlab-jdk/)
-            - [dclong/jupyterlab-scala](https://hub.docker.com/r/dclong/jupyterlab-scala/)
-                - [dclong/jupyterlab-spark](https://hub.docker.com/r/dclong/jupyterlab-spark/)
-            - [dclong/jupyterlab-antlr4](https://hub.docker.com/r/dclong/jupyterlab-antlr4/)
-        - [dclong/jupyterlab-py](https://hub.docker.com/r/dclong/jupyterlab-py/)
-        - [dclong/jupyterlab-rb](https://hub.docker.com/r/dclong/jupyterlab-rb/)
-            - [dclong/jupyterlab-rp](https://hub.docker.com/r/dclong/jupyterlab-rp/)
-                - [dclong/jupyterlab-rp-py](https://hub.docker.com/r/dclong/jupyterlab-rp-py/)
-                - [dclong/jupyterlab-rstudio](https://hub.docker.com/r/dclong/jupyterlab-rstudio/)
-                    - [dclong/jupyterlab-rstudio-py](https://hub.docker.com/r/dclong/jupyterlab-rstudio-py/)
-                        - [dclong/jupyterlab-ds](https://hub.docker.com/r/dclong/jupyterlab-ds/)
-                            - [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
-
+    - [dclong/jupyter](https://hub.docker.com/r/dclong/jupyter/)
+        - [dclong/jupyter-nodejs](https://hub.docker.com/r/dclong/jupyter-nodejs/)
+            - [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
+                - [dclong/jupyterhub](https://hub.docker.com/r/dclong/jupyterhub/)
+                    - [dclong/jupyterhub-jdk](https://hub.docker.com/r/dclong/jupyterhub-jdk/)
+                        - [dclong/jupyterhub-py](https://hub.docker.com/r/dclong/jupyterhub-py/)
+                            - [dclong/jupyterhub-beakerx](https://hub.docker.com/r/dclong/jupyterhub-beakerx/)
+                                - [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
+                - [dclong/jupyterlab-ts](https://hub.docker.com/r/dclong/jupyterlab-ts/)
+                - [dclong/jupyterlab-js](https://hub.docker.com/r/dclong/jupyterlab-js/)
+                - [dclong/jupyterlab-beakerx](https://hub.docker.com/r/dclong/jupyterlab-beakerx/)
+                - [dclong/jupyterlab-tdodbc](https://hub.docker.com/r/dclong/jupyterlab-tdodbc/)
+                - [dclong/jupyterlab-jdk](https://hub.docker.com/r/dclong/jupyterlab-jdk/)
+                    - [dclong/jupyterlab-scala](https://hub.docker.com/r/dclong/jupyterlab-scala/)
+                        - [dclong/jupyterlab-spark](https://hub.docker.com/r/dclong/jupyterlab-spark/)
+                    - [dclong/jupyterlab-antlr4](https://hub.docker.com/r/dclong/jupyterlab-antlr4/)
+                - [dclong/jupyterlab-py](https://hub.docker.com/r/dclong/jupyterlab-py/)
+                - [dclong/jupyterlab-rb](https://hub.docker.com/r/dclong/jupyterlab-rb/)
+                    - [dclong/jupyterlab-rp](https://hub.docker.com/r/dclong/jupyterlab-rp/)
+                        - [dclong/jupyterlab-rp-py](https://hub.docker.com/r/dclong/jupyterlab-rp-py/)
+                        - [dclong/jupyterlab-rstudio](https://hub.docker.com/r/dclong/jupyterlab-rstudio/)
+                            - [dclong/jupyterlab-rstudio-py](https://hub.docker.com/r/dclong/jupyterlab-rstudio-py/)
+                                - [dclong/jupyterlab-ds](https://hub.docker.com/r/dclong/jupyterlab-ds/)
 ## About the Author
 
 [Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
