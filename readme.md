@@ -1,6 +1,6 @@
 # [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
 
-JupyterLab (in Python 3). 
+JupyterLab (in Python 3.6). 
 **It is recommended that you use the image
 [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
 for data science related work.**
@@ -10,8 +10,9 @@ for data science related work.**
 OS: Ubuntu 16.04
 Desktop Environment: None  
 Remote Desktop: None  
-Kernels:  
-    - Python 3 (with popular packages)  
+JupyterLab: 0.33.2
+Jupyter Kernels:  
+    - Python 3.6
 
 ## Usage in Linux/Unix
 
