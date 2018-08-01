@@ -38,7 +38,7 @@ please refer to the offical Docker doc [Install Docker](https://docs.docker.com/
 
 ### Pull the Docker Image
 ```
-docker pull dclong/jupyterlab
+docker pull dclong/jupyterlab:conda3
 ```
 For people in mainland of China, 
 please refer to the post 
@@ -47,7 +47,7 @@ on ways to speed up pushing/pulling of Docker images.
 If you don't bother, 
 then just use the command below. 
 ```
-docker pull registry.docker-cn.com/dclong/jupyterlab
+docker pull registry.docker-cn.com/dclong/jupyterlab:conda3
 ```
 
 ### Start a Container
