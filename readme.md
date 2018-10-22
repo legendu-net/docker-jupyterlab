@@ -11,7 +11,7 @@ please use the **conda3** (corresponds to the conda3 tag) branch instead.
 ## Detailed Information 
 
 OS: Ubuntu 18.04  
-Time Zone: US Pacific Time
+Time Zone: US Pacific Time  
 Desktop Environment: None  
 Remote Desktop: None  
 Jupyter Notebook: 5.6.0  
