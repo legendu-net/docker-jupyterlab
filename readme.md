@@ -11,12 +11,13 @@ please use the **conda3** (corresponds to the conda3 tag) branch instead.
 ## Detailed Information 
 
 OS: Ubuntu 18.04  
+Time Zone: US Pacific Time
 Desktop Environment: None  
 Remote Desktop: None  
 Jupyter Notebook: 5.6.0  
 NodeJS: 8.11.3  
 JupyterLab: 0.35.2  
-JupyterHub: 0.9.1  
+JupyterHub: 0.9.3  
 OpenJDK 8  
 Maven: 3.3.9  
 Jupyter Kernels:  
