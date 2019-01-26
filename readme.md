@@ -65,28 +65,31 @@ Keep the default if you don't know what are the best to use.
     Of course, users can always change it later using the command `passwd`.
     
 The root directory of JupyterLab/Jupyter notebooks is `/workdir` in the container. 
-You can mount directory on the host to it as you wish. 
-In the illustration command below, 
-I have the directory `/workdir` on the host mounted to `/workdir` in the container. 
+You can mount directory on the host to it as you wish.
+The following command starts a container 
+and mounts the current working directory and `/home` on the host machine 
+to `/workdir` and `/home_host` in the container respectively.
 ```
 docker run -d \
+    --name jupyterlab \
     --log-opt max-size=50m \
-    --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
-    --cpus=$((`nproc` - 1)) \   
     -p 8888:8888 \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -e DOCKER_GROUP_ID=`id -g` \
-    -v /workdir:/workdir \
+    -v `pwd`:/workdir \
     -v /home:/home_host \
-    dclong/jupyterlab
+    dclong/juptyerlab
 ```
+The following command (only works on Linux) does the same as the above one 
+except that it limits the use of CPU and memory.
 ```
 docker run -d \
+    --name jupyterlab \
     --log-opt max-size=50m \
     --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
-    --cpus=$((`nproc` - 1)) \    
+    --cpus=$((`nproc` - 1)) \
     -p 8888:8888 \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
