@@ -15,13 +15,10 @@ Time Zone: US Pacific Time
 Desktop Environment: None  
 Remote Desktop: None  
 Jupyter Notebook: 5.6.0  
-NodeJS: 8.11.3  
-JupyterLab: 0.35.2  
-JupyterHub: 0.9.3  
-OpenJDK 8  
-Maven: 3.3.9  
+NodeJS: 10.15.0   
+JupyterLab: 0.35.4  
 Jupyter Kernels:  
-- Python 3.6.6 
+- Python 3.6 
 
 ## Usage in Linux/Unix
 
