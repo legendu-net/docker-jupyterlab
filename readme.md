@@ -110,6 +110,12 @@ where `container_id` is the name/ID of the launched JupyterLab container.
 ```
 docker exec -u `id -un` container_id jupyter notebook list
 ```
+If you use the command provided in this doc to start a container,
+it is named as `jupyterlab`.
+You can then use the following command to get the token for the JupyterLab server.
+```
+docker exec -u `id -un` jupyterlab jupyter notebook list
+```
 
 ## Known Issues
 
