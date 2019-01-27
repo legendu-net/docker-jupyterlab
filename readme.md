@@ -80,7 +80,7 @@ docker run -d \
     -e DOCKER_GROUP_ID=`id -g` \
     -v `pwd`:/workdir \
     -v `dirname $HOME`:/home_host \
-    dclong/juptyerlab
+    dclong/jupyterlab
 ```
 The following command (only works on Linux) does the same as the above one 
 except that it limits the use of CPU and memory.
