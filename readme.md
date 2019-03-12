@@ -4,7 +4,7 @@ JupyterLab in Docker.
 **It is recommended that you use the image
 [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
 for data science related work.**
-Note: Python packages in this version are managed using pip instead of conda.
+Note: Python packages are managed using pip instead of conda.
 
 
 ## Usage in Linux/Unix
