@@ -50,10 +50,6 @@ docker run -d \
 
 ## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
 
-## [Use the JupyterHub Server](http://www.legendu.net/en/blog/my-docker-images/#use-the-jupyterhub-server)
-
-## [Add a New User to the JupyterHub Server](http://www.legendu.net/en/blog/my-docker-images/#add-a-new-user-to-the-jupyterhub-server)
-
 ## [Known Issues](http://www.legendu.net/en/blog/my-docker-images/#known-issues)
 
 ## [About the Author](http://www.legendu.net/pages/about)
