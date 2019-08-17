@@ -1,4 +1,4 @@
-# [dclong/jupyterlab](https://hub.docker.com/r/dclong/jupyterlab/)
+# dclong/jupyterlab [@DockerHub](https://hub.docker.com/r/dclong/jupyterlab/) | [@GitHub](https://github.com/dclong/docker-jupyterlab)
 
 JupyterLab in Docker. 
 **It is recommended that you use the image
@@ -49,10 +49,6 @@ docker run -d \
 ```
 
 ## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
-
-## [Use the JupyterHub Server](http://www.legendu.net/en/blog/my-docker-images/#use-the-jupyterhub-server)
-
-## [Add a New User to the JupyterHub Server](http://www.legendu.net/en/blog/my-docker-images/#add-a-new-user-to-the-jupyterhub-server)
 
 ## [Known Issues](http://www.legendu.net/en/blog/my-docker-images/#known-issues)
 
