@@ -28,7 +28,7 @@ docker run -d \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/jupyterlab
+    dclong/jupyterlab /scripts/sys/init.sh
 ```
 The following command (only works on Linux) does the same as the above one 
 except that it limits the use of CPU and memory.
@@ -45,7 +45,7 @@ docker run -d \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
-    dclong/jupyterlab
+    dclong/jupyterlab /scripts/sys/init.sh
 ```
 
 ## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
