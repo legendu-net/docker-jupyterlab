@@ -47,6 +47,7 @@ docker run -d \
     -v $(dirname $HOME):/home_host \
     dclong/jupyterlab /scripts/sys/init.sh
 ```
+## [Get the Token for Login](http://www.legendu.net/en/blog/my-docker-images/#get-information-of-running-jupyterlab-servers) 
 
 ## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
 
