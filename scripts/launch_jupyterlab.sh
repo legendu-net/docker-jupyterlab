@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export DOCKER_USER=$(id -un)
 for f in $(ls /scripts/config/[0-9][0-9][0-9]-*.sh); do
     source $f
 done
