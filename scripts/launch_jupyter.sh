@@ -1,9 +1,7 @@
 #!/bin/bash
 
 export DOCKER_USER=$(id -un)
-for f in $(ls /scripts/config/[0-9][0-9][0-9]-*.sh); do
-    source $f
-done
+/scripts/sys/etc.sh
 NOTEBOOK_DIR=/workdir
 if [[ $(id -un) == gitpod ]]; then
     NOTEBOOK_DIR=/workspace
