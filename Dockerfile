@@ -6,7 +6,7 @@ RUN pip3 install --no-cache-dir jupyterlab \
     && jupyter labextension install @jupyterlab/toc \
     && jupyter labextension install jupyterlab-favorites \
     && jupyter labextension install jupyterlab-recents \
-    && jupyter labextension install @krassowski/jupyterlab-lsp \
+    # && jupyter labextension install @krassowski/jupyterlab-lsp \
     && npm cache clean --force
 
 COPY scripts /scripts
