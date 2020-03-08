@@ -32,6 +32,20 @@ docker run -d \
     -v $(dirname $HOME):/home_host \
     dclong/jupyterlab /scripts/sys/init.sh
 ```
+Use the image with the `next` tag (which is the testing/next version of dclong/jupyterhub-ds).
+```
+docker run -d \
+    --hostname jupyterlab \
+    --log-opt max-size=50m \
+    -p 8888:8888 \
+    -e DOCKER_USER=$(id -un) \
+    -e DOCKER_USER_ID=$(id -u) \
+    -e DOCKER_PASSWORD=$(id -un) \
+    -e DOCKER_GROUP_ID=$(id -g) \
+    -v $(pwd):/workdir \
+    -v $(dirname $HOME):/home_host \
+    dclong/jupyterlab:next /scripts/sys/init.sh
+```
 The following command (only works on Linux) does the same as the above one 
 except that it limits the use of CPU and memory.
 ```
@@ -48,6 +62,22 @@ docker run -d \
     -v $(pwd):/workdir \
     -v $(dirname $HOME):/home_host \
     dclong/jupyterlab /scripts/sys/init.sh
+```
+Use the image with the `next` tag (which is the testing/next version of dclong/jupyterhub-ds).
+```
+docker run -d \
+    --hostname jupyterlab \
+    --log-opt max-size=50m \
+    --memory=$(($(head -n 1 /proc/meminfo | awk '{print $2}') * 4 / 5))k \
+    --cpus=$(($(nproc) - 1)) \
+    -p 8888:8888 \
+    -e DOCKER_USER=$(id -un) \
+    -e DOCKER_USER_ID=$(id -u) \
+    -e DOCKER_PASSWORD=$(id -un) \
+    -e DOCKER_GROUP_ID=$(id -g) \
+    -v $(pwd):/workdir \
+    -v $(dirname $HOME):/home_host \
+    dclong/jupyterlab:next /scripts/sys/init.sh
 ```
 ## [Get the Token for Login](http://www.legendu.net/en/blog/my-docker-images/#get-information-of-running-jupyterlab-servers) 
 
