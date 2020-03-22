@@ -1,6 +1,6 @@
 FROM dclong/jupyter-nodejs
 
-RUN pip3 install --no-cache-dir jupyterlab \
+RUN pip3 install --no-cache-dir jupyterlab==1.2.7 \
       # jupyter-lsp 
       python-language-server[all] \
     && jupyter labextension install @jupyter-widgets/jupyterlab-manager \
