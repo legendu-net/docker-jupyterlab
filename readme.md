@@ -4,7 +4,7 @@ JupyterLab in Docker.
 **It is recommended that you use the image
 [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
 for data science related work
-and use [dclong/jupyterhub-ai](https://hub.docker.com/r/dclong/jupyterhub-ai/) for deep learning leveraging GPU.**
+and [dclong/jupyterhub-ai](https://hub.docker.com/r/dclong/jupyterhub-ai/) for deep learning leveraging GPU.**
 Note: Python packages are managed using pip instead of conda.
 
 ## Prerequisite
