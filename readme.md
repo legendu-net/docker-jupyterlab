@@ -3,7 +3,8 @@
 JupyterLab in Docker. 
 **It is recommended that you use the image
 [dclong/jupyterhub-ds](https://hub.docker.com/r/dclong/jupyterhub-ds/)
-for data science related work.**
+for data science related work
+and [dclong/jupyterhub-ai](https://hub.docker.com/r/dclong/jupyterhub-ai/) for deep learning leveraging GPU.**
 Note: Python packages are managed using pip instead of conda.
 
 ## Prerequisite
@@ -11,7 +12,7 @@ You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/
 
 ## Usage in Linux/Unix
 
-Please refer to the Section
+Please refer to the section
 [Usage](http://www.legendu.net/en/blog/my-docker-images/#usage)
 of the post [My Docker Images](http://www.legendu.net/en/blog/my-docker-images/) 
 for detailed instruction on how to use the Docker image.
@@ -28,8 +29,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/jupyterlab /scripts/sys/init.sh
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/jupyterhub-ds).
@@ -42,8 +43,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/jupyterlab:next /scripts/sys/init.sh
 ```
 The following command (only works on Linux) does the same as the above one 
@@ -59,8 +60,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/jupyterlab /scripts/sys/init.sh
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/jupyterhub-ds).
@@ -75,8 +76,8 @@ docker run -d \
     -e DOCKER_USER_ID=$(id -u) \
     -e DOCKER_PASSWORD=$(id -un) \
     -e DOCKER_GROUP_ID=$(id -g) \
-    -v $(pwd):/workdir \
-    -v $(dirname $HOME):/home_host \
+    -v "$(pwd)":/workdir \
+    -v "$(dirname $HOME)":/home_host \
     dclong/jupyterlab:next /scripts/sys/init.sh
 ```
 ## [Get the Token for Login](http://www.legendu.net/en/blog/my-docker-images/#get-information-of-running-jupyterlab-servers) 
