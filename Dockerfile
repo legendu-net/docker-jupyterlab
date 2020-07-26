@@ -1,4 +1,6 @@
+# NAME: dclong/jupyterlab
 FROM dclong/jupyter-nodejs
+# GIT: https://github.com/dclong/docker-jupyter-nodejs.git
 
 RUN pip3 install --no-cache-dir "jupyterlab>=2.1.0,<2.2.0" \
       # jupyter-lsp 
