@@ -1,0 +1,21 @@
+name: Create Pull Request
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  create_pull_request:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+      - name: Reset main branch with dev changes
+        run: |
+          git fetch origin dev:dev
+          git reset --hard dev
+      - name: Create pull request from dev to main
+        uses: peter-evans/create-pull-request@v3
+        with:
+          title: Merge dev into main
+          branch: dev
