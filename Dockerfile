@@ -14,5 +14,5 @@ RUN pip3 install --no-cache-dir "jupyterlab>=2.1.0,<2.3.0" \
     && npm cache clean --force
 
 COPY scripts /scripts
-#COPY settings /settings
-COPY settings/themes.jupyterlab-settings /etc/jupyter/config/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+#COPY settings/themes.jupyterlab-settings /etc/jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
+COPY settings /settings
