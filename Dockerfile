@@ -2,7 +2,7 @@
 FROM dclong/jupyter-nodejs
 # GIT: https://github.com/dclong/docker-jupyter-nodejs.git
 
-RUN pip3 install --no-cache-dir "jupyterlab>=2.1.0,<2.3.0" \
+RUN pip3 install --no-cache-dir "jupyterlab>=2.1.0,<3.1.0" \
       # jupyter-lsp 
       python-language-server[all] \
       # nbresuse jupyter-resource-usage \
