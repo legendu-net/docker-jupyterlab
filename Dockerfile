@@ -4,7 +4,7 @@ FROM dclong/python-nodejs
 
 RUN pip3 install --no-cache-dir "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.1.0" \
       jupyterlab-lsp python-language-server[all] \
-      # nbresuse jupyter-resource-usage \
+      jupyter-resource-usage \
     && jupyter labextension install @jupyter-widgets/jupyterlab-manager \
     #&& jupyter labextension install jupyterlab-favorites \
     #&& jupyter labextension install jupyterlab-recents \
