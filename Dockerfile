@@ -7,7 +7,7 @@ RUN pip3 install --no-cache-dir "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.1.0" \
       jupyterlab-lsp python-language-server[all] \
       jupyter-resource-usage \
     #&& jupyter labextension install jupyterlab-favorites \
-    #&& jupyter labextension install jupyterlab-recents \
+    && jupyter labextension install jupyterlab-recents \
     && npm cache clean --force
     
 # Python 3.7 Kernel
