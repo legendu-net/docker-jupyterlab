@@ -4,7 +4,7 @@ FROM dclong/python-nodejs
 
 RUN pip3 install --no-cache-dir "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.1.0" \
       jupyterlab_widgets \
-      python-language-server[all] \
+      jupyterlab-lsp python-language-server[all] \
       jupyter-resource-usage \
     && npm cache clean --force
     
