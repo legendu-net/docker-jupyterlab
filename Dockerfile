@@ -2,7 +2,7 @@
 FROM dclong/python-nodejs
 # GIT: https://github.com/dclong/docker-python-nodejs.git
 
-RUN pip3 install --no-cache-dir 
+RUN pip3 install --no-cache-dir \
       #nbdime nbconvert 
       "jupyterlab>=2.1.0,<3.0.15"
       #jupyterlab_widgets \
