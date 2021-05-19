@@ -2,6 +2,7 @@ import subprocess as sp
 
 
 def test_launch():
+    sp.run("docker ps", shell=True, check=True)
     proc = sp.run("""
         docker run -d --init \
             --hostname jupyterlab \
@@ -17,3 +18,4 @@ def test_launch():
             """, shell=True, check=True, capture_output=True)
     cid = proc.stdout.decode()
     sp.run(f"docker stop {cid}", shell=True, check=True)
+    sp.run("docker ps", shell=True, check=True)
