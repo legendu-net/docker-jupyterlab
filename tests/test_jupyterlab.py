@@ -16,4 +16,4 @@ def test_launch():
             dclong/jupyterlab:next /scripts/sys/init.sh
             """, shell=True, check=True, capture_output=True)
     cid = proc.stdout.decode()
-    sp.run(f"docker stop {cid}")
+    sp.run(f"docker stop {cid}", shell=True, check=True)
