@@ -2,13 +2,11 @@
 FROM dclong/python-nodejs
 # GIT: https://github.com/dclong/docker-python-nodejs.git
 
-RUN pip3 install --no-cache-dir \
-      #nbdime nbconvert 
-      "jupyterlab>=2.1.0,<3.0.15"
-      #jupyterlab_widgets \
-      #jupyterlab-lsp python-language-server[all] \
-      #jupyter-resource-usage \
-    #&& npm cache clean --force
+RUN pip3 install --no-cache-dir nbdime "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.1.0" \
+      jupyterlab_widgets \
+      jupyterlab-lsp python-language-server[all] \
+      jupyter-resource-usage \
+    && npm cache clean --force
     
 # Python 3.7 Kernel
 RUN /opt/pyenv/versions/3.7.*/bin/python -m pip install ipykernel \
