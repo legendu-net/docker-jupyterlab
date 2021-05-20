@@ -1,4 +1,8 @@
 #!/bin/bash
+# This script is kept for to give users a way 
+# to launch a JupyterLab server conveniently inside a Docker container. 
+# For example, if you are using the dclong/gitpod Docker image on GitPod,
+# and you want to launch a JupyterLab server inside the GitPod container.
 
 export DOCKER_USER=$(id -un)
 /scripts/sys/etc.sh pre 059
