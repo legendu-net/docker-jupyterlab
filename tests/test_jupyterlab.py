@@ -3,7 +3,7 @@ import subprocess as sp
 
 def test_launch():
     proc = sp.run("""
-        docker run -it --init \
+        docker run -i --init \
             --hostname jupyterlab \
             --log-opt max-size=50m \
             -p 8888:8888 \
