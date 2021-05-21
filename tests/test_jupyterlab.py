@@ -15,8 +15,8 @@ def test_launch():
             -v "$(dirname $HOME)":/home_host \
             dclong/jupyterlab:next /scripts/sys/init.sh
             """, shell=True, check=True, capture_output=True)
-    cid = proc.stdout.strip()
-    cids = sp.run("docker ps -q --no-trunc", shell=True, check=True, capture_output=True).stdout.strip().split()
+    cid = proc.stdout.strip().decode()
+    cids = sp.run("docker ps -q --no-trunc", shell=True, check=True, capture_output=True).stdout.strip().decode().split()
     assert cid in cids
     sp.run(f"docker stop {cid}", shell=True, check=True)
     sp.run(f"docker rm {cid}", shell=True, check=True)
