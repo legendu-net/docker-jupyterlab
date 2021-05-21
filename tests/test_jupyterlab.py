@@ -1,4 +1,5 @@
 import subprocess as sp 
+import time
 
 
 def test_launch():
@@ -16,6 +17,7 @@ def test_launch():
             dclong/jupyterlab:next /scripts/sys/init.sh
             """, shell=True, check=True, capture_output=True)
     cid = proc.stdout.strip().decode()
+    time.sleep(60)
     cids = sp.run("docker ps -q --no-trunc", shell=True, check=True, capture_output=True).stdout.strip().decode().split()
     assert cid in cids
     sp.run(f"docker stop {cid}", shell=True, check=True)
