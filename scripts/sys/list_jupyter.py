@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import json
-from notebook import notebookapp
+from jupyter_server import serverapp
 
-servers = list(notebookapp.list_running_servers())
+servers = list(serverapp.list_running_servers())
 print(json.dumps(servers, indent=4))
