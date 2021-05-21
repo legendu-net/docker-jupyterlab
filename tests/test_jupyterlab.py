@@ -14,7 +14,7 @@ def test_launch():
             -e DOCKER_GROUP_ID=$(id -g) \
             -v "$(pwd)":/workdir \
             -v "$(dirname $HOME)":/home_host \
-            dclong/jupyterlab:next /scripts/sys/init.sh
+            dclong/jupyterlab /scripts/sys/init.sh
             """, shell=True, check=True, capture_output=True)
     cid = proc.stdout.strip().decode()
     time.sleep(60)
