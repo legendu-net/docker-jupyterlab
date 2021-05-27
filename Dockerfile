@@ -4,8 +4,10 @@ FROM dclong/python-nodejs
 
 RUN pip3 install --no-cache-dir nbdime "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.1.0" \
       jupyterlab_widgets \
+      jupyterlab_vim \
       jupyterlab-lsp python-language-server[all] \
       jupyter-resource-usage \
+    && jupyter labextension disable @axlair/jupyterlab_vim \
     && npm cache clean --force
     
 # Python 3.7 Kernel
