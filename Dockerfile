@@ -8,7 +8,7 @@ RUN pip3 install nbdime "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.2.0" \
       jupyterlab-lsp python-language-server[all] \
       jupyter-resource-usage \
     && jupyter labextension disable @axlair/jupyterlab_vim \
-    && pip3 cache purge \
+    && /scripts/sys/purge_cache.sh \
     && npm cache clean --force
     
 # Python 3.7 Kernel
