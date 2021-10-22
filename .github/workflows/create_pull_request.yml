@@ -17,7 +17,7 @@ jobs:
       - name: Create pull request from dev to main
         uses: peter-evans/create-pull-request@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }} 
+          token: ${{ secrets.GITHUBACTIONS }} 
           title: Merge dev into main
           branch: dev
           author: dclong <dclong@users.noreply.github.com>
