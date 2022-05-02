@@ -2,7 +2,7 @@
 FROM dclong/python-nodejs
 # GIT: https://github.com/dclong/docker-python-nodejs.git
 
-RUN pip3 install nbdime "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.3.0" \
+RUN pip3 install nbdime "jinja2==3.0.3" "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.3.0" \
       jupyterlab_widgets ipywidgets \
       jupyterlab_vim \
       jupyterlab-lsp python-language-server[all] \
