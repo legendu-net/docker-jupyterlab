@@ -1,6 +1,6 @@
 # NAME: dclong/jupyterlab
 FROM dclong/python-nodejs
-# GIT: https://github.com/dclong/docker-python-nodejs.git
+# GIT: https://github.com/legendu-net/docker-python-nodejs.git
 
 RUN pip3 install nbdime "jinja2==3.0.3" "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.3.0" \
       jupyterlab_widgets ipywidgets \
