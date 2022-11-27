@@ -4,10 +4,10 @@ on:
     branches:
       - dev
 jobs:
-  create_pull_request:
+  pr_to_main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: main
       - name: Reset main branch with dev changes
@@ -22,3 +22,20 @@ jobs:
           branch: dev
           author: dclong <dclong@users.noreply.github.com>
           assignees: dclong  
+  pr_to_blog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: blog
+      - name: Reset debian branch with dev changes
+        run: |
+          git fetch origin dev:dev
+          git reset --hard dev
+      - name: Create pull request from dev to blog
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUBACTIONS }} 
+          title: Merge dev into blog
+          branch: dev
+          assignees: dclong

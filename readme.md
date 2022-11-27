@@ -31,7 +31,7 @@ docker run -d --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/jupyterlab /scripts/sys/init.sh
+    dclong/jupyterlab /scripts/sys/init.sh --switch-user
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/jupyterhub-ds).
 ```
@@ -45,7 +45,7 @@ docker run -d --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/jupyterlab:next /scripts/sys/init.sh
+    dclong/jupyterlab:next /scripts/sys/init.sh --switch-user
 ```
 The following command (only works on Linux) does the same as the above one 
 except that it limits the use of CPU and memory.
@@ -62,7 +62,7 @@ docker run -d --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/jupyterlab /scripts/sys/init.sh
+    dclong/jupyterlab /scripts/sys/init.sh --switch-user
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/jupyterhub-ds).
 ```
@@ -78,7 +78,7 @@ docker run -d --init \
     -e DOCKER_GROUP_ID=$(id -g) \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/jupyterlab:next /scripts/sys/init.sh
+    dclong/jupyterlab:next /scripts/sys/init.sh --switch-user
 ```
 ## [Get the Token for Login](http://www.legendu.net/en/blog/my-docker-images/#get-information-of-running-jupyterlab-servers) 
 
