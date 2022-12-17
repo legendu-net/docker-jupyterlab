@@ -7,6 +7,8 @@ for data science related work
 and [dclong/jupyterhub-pytorch](https://hub.docker.com/r/dclong/jupyterhub-pytorch/) for deep learning leveraging GPU.**
 Note: Python packages are managed using pip instead of conda.
 
+## [Recommended Docker Images](http://www.legendu.net/en/blog/my-docker-images/#recommended-docker-images) 
+
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
 
