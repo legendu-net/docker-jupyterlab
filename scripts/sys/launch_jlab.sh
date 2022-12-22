@@ -1,9 +1,19 @@
 #!/bin/bash
-# This script is identical to the script launch.sh in this repository.
-# It is not redundant even though it is not used in most cases. 
-# This script is kept here so that users can still launch a JupyterLab service 
-# (by passing the CMD /scripts/sys/init.sh /scripts/sys/launch_jlab.sh to the Docker image) 
-# in situations where launch.sh is overwritten (e.g., in dclong/vscode-server).
+# This script is for launching a JupyterLab service 
+# in situations where launch.sh in dclong/jupyterlab is overwritten (e.g., in dclong/vscode-server).
+# There are 2 popular use cases.
+# 1. Pass the CMD "/scripts/sys/init.sh /scripts/sys/launch_jlab.sh" to the docker command when launching a Docker container.
+# 2. Run "/scripts/sys/launch_jlab.sh" in an already launched Docker container.
 
-#su -m $DOCKER_USER -c "jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --collaborative --notebook-dir=/workdir"
-su -m $DOCKER_USER -c "jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workdir"
+#@TODO: add --collaborative when it's stable
+
+case "$(id -un)" in
+    root )
+        su -m $DOCKER_USER -c "jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workdir"
+        ;;
+    gitpod )
+        jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workspace
+        ;;
+    *)
+        jupyter lab --allow-root --ip='0.0.0.0' --port=8888 --no-browser --notebook-dir=/workdir
+esac
