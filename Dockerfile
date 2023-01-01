@@ -5,7 +5,7 @@ FROM dclong/python-nodejs
 RUN pip3 install nbdime jinja2 nbconvert "jupyterlab>=2.1.0,<3.5.0" \
       jupyterlab_widgets ipywidgets \
       jupyterlab_vim \
-      jupyterlab-lsp python-language-server[all] \
+      jupyterlab-lsp python-lsp-server[all] \
       jupyter-resource-usage \
     && jupyter labextension disable @axlair/jupyterlab_vim \
     && /scripts/sys/purge_cache.sh \
