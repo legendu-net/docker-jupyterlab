@@ -1,14 +1,14 @@
 {
   "language_servers": {
-    "pyls": {
+    "pylsp": {
       "serverSettings": {
-        "pyls.plugins.pylint.enabled": true,
-        "pyls.plugins.pytype.enabled": true,
-        "pyls.plugins.yapf.enabled": true,
-        "pyls.plugins.pydocstyle.enabled": false,
-        "pyls.plugins.pycodestyle.enabled": false,
-        "pyls.plugins.pyflakes.enabled": false,
-        "pyls.plugins.flake8.enabled": false
+        "pylsp.plugins.pylint.enabled": true,
+        "pylsp.plugins.pytype.enabled": true,
+        "pylsp.plugins.yapf.enabled": true,
+        "pylsp.plugins.pydocstyle.enabled": false,
+        "pylsp.plugins.pycodestyle.enabled": false,
+        "pylsp.plugins.pyflakes.enabled": false,
+        "pylsp.plugins.flake8.enabled": false
       }
     }
   }
