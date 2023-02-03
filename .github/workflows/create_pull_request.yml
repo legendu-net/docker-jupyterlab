@@ -15,7 +15,7 @@ jobs:
           git fetch origin dev:dev
           git reset --hard dev
       - name: Create pull request from dev to main
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUBACTIONS }} 
           title: Merge dev into main
@@ -33,7 +33,7 @@ jobs:
           git fetch origin dev:dev
           git reset --hard dev
       - name: Create pull request from dev to blog
-        uses: peter-evans/create-pull-request@v3
+        uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUBACTIONS }} 
           title: Merge dev into blog
