@@ -2,12 +2,14 @@
 FROM dclong/python-nodejs
 # GIT: https://github.com/legendu-net/docker-python-nodejs.git
 
+COPY --from=dclong/rust-utils /usr/local/cargo/bin/stork /usr/local/bin/
 RUN pip3 install nbdime "jinja2==3.0.3" "nbconvert==5.6.1" "jupyterlab>=2.1.0,<3.6.0" \
       jupyterlab_widgets ipywidgets \
       jupyterlab-lsp python-lsp-server[all] \
       jupyterlab-code-formatter \
       jupyterlab_vim \
       jupyter-resource-usage \
+      pelican-render-math pelican-search \
     && jupyter labextension disable @axlair/jupyterlab_vim \
     && /scripts/sys/purge_cache.sh \
     && npm cache clean --force
