@@ -1,4 +1,4 @@
 #!/bin/bash
 
-docker pull dclong/jupyter-nodejs:next
+docker pull dclong/python-nodejs:next
 docker build -t dclong/jupyterlab:next .
