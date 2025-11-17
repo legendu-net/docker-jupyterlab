@@ -17,5 +17,6 @@ RUN pip3 install --break-system-packages \
 
 COPY scripts /scripts
 #COPY settings/themes.jupyterlab-settings /etc/jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
-COPY settings /settings
+COPY settings/*jupyterlab-* /settings/
+COPY settings/jupyter_server_config.py /etc/jupyter/
 ENV SHELL=/usr/bin/fish
