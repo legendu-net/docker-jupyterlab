@@ -2,8 +2,9 @@
 FROM dclong/python-nodejs
 # GIT: https://github.com/legendu-net/docker-python-nodejs.git
 
+RUN icon fish -i
 RUN pip3 install --break-system-packages \
-      nbdime jinja2 nbconvert "jupyterlab>=2.1.0,<4.4.0" \
+      nbdime jinja2 nbconvert "jupyterlab>=2.1.0,<4.5.0" \
       jupyterlab_widgets ipywidgets jupyterlab_myst \
       jupyterlab-lsp python-lsp-server[all] \
       jupyterlab-code-formatter \
@@ -16,4 +17,6 @@ RUN pip3 install --break-system-packages \
 
 COPY scripts /scripts
 #COPY settings/themes.jupyterlab-settings /etc/jupyter/lab/user-settings/@jupyterlab/apputils-extension/themes.jupyterlab-settings
-COPY settings /settings
+COPY settings/*jupyterlab-* /settings/
+COPY settings/jupyter_server_config.py /etc/jupyter/
+
