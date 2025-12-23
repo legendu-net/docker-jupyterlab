@@ -17,4 +17,5 @@ cp /settings/jupyterlab-lsp.json $lsp_dir/plugin.jupyterlab-settings
 
 chown -R $DOCKER_USER:$DOCKER_GROUP $HOME/.jupyter
 
-icon fish -c
+su -m $DOCKER_USER -c "icon fish -c"
+
