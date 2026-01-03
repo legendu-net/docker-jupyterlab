@@ -1,15 +1,15 @@
 # Configuration file for jupyter-server.
 import os
 
-c = get_config()  #noqa
-#------------------------------------------------------------------------------
+c = get_config()  # noqa
+# ------------------------------------------------------------------------------
 # permission 775 for new dirs (for easy sharing)
 os.umask(0o002)
-#------------------------------------------------------------------------------
-#c.ServerApp.ResourceUseDisplay.track_cpu_percent = True
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# c.ServerApp.ResourceUseDisplay.track_cpu_percent = True
+# ------------------------------------------------------------------------------
 # Application(SingletonConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## This is an application.
 
 ## The date format used by logging formatters for %(asctime)s
@@ -26,32 +26,32 @@ os.umask(0o002)
 # c.Application.log_level = 30
 
 ## Configure additional log handlers.
-#  
+#
 #  The default stderr logs handler is configured by the log_level, log_datefmt
 #  and log_format settings.
-#  
+#
 #  This configuration can be used to configure additional handlers (e.g. to
 #  output the log to a file) or for finer control over the default handlers.
-#  
+#
 #  If provided this should be a logging configuration dictionary, for more
 #  information see:
 #  https://docs.python.org/3/library/logging.config.html#logging-config-
 #  dictschema
-#  
+#
 #  This dictionary is merged with the base logging configuration which defines
 #  the following:
-#  
+#
 #  * A logging formatter intended for interactive use called
 #    ``console``.
 #  * A logging handler that writes to stderr called
 #    ``console`` which uses the formatter ``console``.
 #  * A logger with the name of this application set to ``DEBUG``
 #    level.
-#  
+#
 #  This example adds a new handler that writes to a file:
-#  
+#
 #  .. code-block:: python
-#  
+#
 #     c.Application.logging_config = {
 #         "handlers": {
 #             "file": {
@@ -80,9 +80,9 @@ os.umask(0o002)
 #  Default: False
 # c.Application.show_config_json = False
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # JupyterApp(Application) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Base class for Jupyter applications
 
 ## Answer yes to any prompts.
@@ -113,7 +113,7 @@ os.umask(0o002)
 #  See also: Application.log_level
 # c.JupyterApp.log_level = 30
 
-## 
+##
 #  See also: Application.logging_config
 # c.JupyterApp.logging_config = {}
 
@@ -125,9 +125,9 @@ os.umask(0o002)
 #  See also: Application.show_config_json
 # c.JupyterApp.show_config_json = False
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # ServerApp(JupyterApp) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## The Jupyter Server application class.
 
 ## Set the Access-Control-Allow-Credentials: true header
@@ -140,21 +140,21 @@ os.umask(0o002)
 # c.ServerApp.allow_external_kernels = False
 
 ## Set the Access-Control-Allow-Origin header
-#  
+#
 #          Use '*' to allow any origin to access your server.
-#  
+#
 #          Takes precedence over allow_origin_pat.
 #  Default: ''
 # c.ServerApp.allow_origin = ''
 
 ## Use a regular expression for the Access-Control-Allow-Origin header
-#  
+#
 #          Requests from an origin matching the expression will get replies with:
-#  
+#
 #              Access-Control-Allow-Origin: origin
-#  
+#
 #          where `origin` is the origin of the request.
-#  
+#
 #          Ignored if allow_origin is set.
 #  Default: ''
 # c.ServerApp.allow_origin_pat = ''
@@ -164,15 +164,15 @@ os.umask(0o002)
 # c.ServerApp.allow_password_change = True
 
 ## Allow requests where the Host header doesn't point to a local server
-#  
+#
 #         By default, requests get a 403 forbidden response if the 'Host' header
 #         shows that the browser thinks it's on a non-local domain.
 #         Setting this option to True disables this check.
-#  
+#
 #         This protects against 'DNS rebinding' attacks, where a remote web server
 #         serves you a page and then changes its DNS to send later requests to a
 #         local IP, bypassing same-origin checks.
-#  
+#
 #         Local IP addresses (such as 127.0.0.1 and ::1) are allowed as local,
 #         along with hostnames configured in local_hostnames.
 #  Default: False
@@ -183,15 +183,15 @@ os.umask(0o002)
 # c.ServerApp.allow_root = False
 
 ## Allow unauthenticated access to endpoints without authentication rule.
-#  
+#
 #          When set to `True` (default in jupyter-server 2.0, subject to change
 #          in the future), any request to an endpoint without an authentication rule
 #          (either `@tornado.web.authenticated`, or `@allow_unauthenticated`)
 #          will be permitted, regardless of whether user has logged in or not.
-#  
+#
 #          When set to `False`, logging in will be required for access to each endpoint,
 #          excluding the endpoints marked with `@allow_unauthenticated` decorator.
-#  
+#
 #          This option can be configured using `JUPYTER_SERVER_ALLOW_UNAUTHENTICATED_ACCESS`
 #          environment variable: any non-empty value other than "true" and "yes" will
 #          prevent unauthenticated access to endpoints without `@allow_unauthenticated`.
@@ -216,7 +216,7 @@ os.umask(0o002)
 # c.ServerApp.autoreload = False
 
 ## The base URL for the Jupyter server.
-#  
+#
 #                         Leading and trailing slashes can be omitted,
 #                         and will automatically be added.
 #  Default: '/'
@@ -263,7 +263,7 @@ os.umask(0o002)
 #          By default this is generated on first start of the server and persisted across server
 #          sessions by writing the cookie secret into the `cookie_secret_file` file.
 #          When using an executable config file you can override this to be random at each server restart.
-#  
+#
 #          Note: Cookie secrets should be kept private, do not share config files with
 #          cookie_secret stored in plaintext (you can read the value from a file).
 #  Default: b''
@@ -274,12 +274,12 @@ os.umask(0o002)
 # c.ServerApp.cookie_secret_file = ''
 
 ## Override URL shown to users.
-#  
+#
 #          Replace actual URL, including protocol, address, port and base URL,
 #          with the given value when displaying URL to the users. Do not change
 #          the actual connection URL. If authentication token is enabled, the
 #          token is added to the custom URL automatically.
-#  
+#
 #          This option is intended to be used when the URL to display to the user
 #          cannot be determined reliably by the Jupyter server (proxified
 #          or containerized setups for example).
@@ -291,13 +291,13 @@ os.umask(0o002)
 # c.ServerApp.default_url = '/'
 
 ## Disable cross-site-request-forgery protection
-#  
+#
 #          Jupyter server includes protection from cross-site request forgeries,
 #          requiring API requests to either:
-#  
+#
 #          - originate from pages served by this server (validated with XSRF cookie and token), or
 #          - authenticate with a token
-#  
+#
 #          Some anonymous compute resources still desire the ability to run code,
 #          completely without authentication.
 #          These services can disable all authentication and security checks,
@@ -314,12 +314,12 @@ os.umask(0o002)
 # c.ServerApp.external_connection_dir = None
 
 ## Additional URL parameter keys to scrub from logs.
-#  
+#
 #  These will be added to the default list of scrubbed parameter keys. Any URL
 #  parameter whose key contains one of these substrings will have its value
 #  replaced with '[secret]' in the logs. This is to prevent sensitive information
 #  like authentication tokens from being leaked in log files.
-#  
+#
 #  Default scrubbed keys: ["token", "auth", "key", "code", "state", "xsrf"]
 #  Default: []
 # c.ServerApp.extra_log_scrub_param_keys = []
@@ -329,14 +329,14 @@ os.umask(0o002)
 # c.ServerApp.extra_services = []
 
 ## Extra paths to search for serving static files.
-#  
+#
 #          This allows adding javascript/css to be available from the Jupyter server machine,
 #          or overriding individual files in the IPython
 #  Default: []
 # c.ServerApp.extra_static_paths = []
 
 ## Extra paths to search for serving jinja templates.
-#  
+#
 #          Can be used to override templates from jupyter_server.templates.
 #  Default: []
 # c.ServerApp.extra_template_paths = []
@@ -393,7 +393,7 @@ os.umask(0o002)
 
 ## The kernel spec manager class to use. Should be a subclass of
 #  `jupyter_client.kernelspec.KernelSpecManager`.
-#  
+#
 #  The Api of KernelSpecManager is provisional and might change without warning
 #  between this version of Jupyter and the next stable one.
 #  Default: 'builtins.object'
@@ -416,7 +416,7 @@ os.umask(0o002)
 # c.ServerApp.limit_rate = False
 
 ## Hostnames to allow as local when allow_remote_access is False.
-#  
+#
 #         Local IP addresses (such as 127.0.0.1 and ::1) are automatically accepted
 #         as local as well.
 #  Default: ['localhost']
@@ -434,7 +434,7 @@ os.umask(0o002)
 #  See also: Application.log_level
 # c.ServerApp.log_level = 30
 
-## 
+##
 #  See also: Application.logging_config
 # c.ServerApp.logging_config = {}
 
@@ -449,7 +449,7 @@ os.umask(0o002)
 ## Sets the maximum allowed size of the client request body, specified in the
 #  Content-Length request header field. If the size in a request exceeds the
 #  configured value, a malformed HTTP message is returned to the client.
-#  
+#
 #  Note: max_body_size is applied even in streaming mode.
 #  Default: 536870912
 # c.ServerApp.max_body_size = 536870912
@@ -555,7 +555,7 @@ os.umask(0o002)
 # c.ServerApp.ssl_options = {}
 
 ## Paths to set up static files as immutable.
-#  
+#
 #  This allow setting up the cache control of static files as immutable. It
 #  should be used for static file named with a hash for instance.
 #  Default: []
@@ -568,10 +568,10 @@ c.ServerApp.terminado_settings = {
 }
 
 ## Set to False to disable terminals.
-#  
+#
 #           This does *not* make the server more secure by itself.
 #           Anything the user can in a terminal, they can also do in a notebook.
-#  
+#
 #           Terminals may also be automatically disabled if the terminado package
 #           is not available.
 #  Default: False
@@ -600,7 +600,7 @@ c.ServerApp.terminado_settings = {
 #       launching a browser using a redirect file can lead the browser failing to load.
 #       This is because of the difference in file structures/paths between the runtime and
 #       the browser.
-#  
+#
 #       Disabling this setting to False will disable this behavior, allowing the browser
 #       to launch by using a URL and visible token (as before).
 #  Default: True
@@ -610,33 +610,33 @@ c.ServerApp.terminado_settings = {
 #          `new` argument passed to the standard library method `webbrowser.open`.
 #          The behaviour is not guaranteed, but depends on browser support. Valid
 #          values are:
-#  
+#
 #           - 2 opens a new tab,
 #           - 1 opens a new window,
 #           - 0 opens in an existing window.
-#  
+#
 #          See the `webbrowser.open` documentation for details.
 #  Default: 2
 # c.ServerApp.webbrowser_open_new = 2
 
 ## Set the tornado compression options for websocket connections.
-#  
+#
 #  This value will be returned from
 #  :meth:`WebSocketHandler.get_compression_options`. None (default) will disable
 #  compression. A dict (even an empty one) will enable compression.
-#  
+#
 #  See the tornado docs for WebSocketHandler.get_compression_options for details.
 #  Default: None
 # c.ServerApp.websocket_compression_options = None
 
 ## Configure the websocket ping interval in seconds.
-#  
+#
 #  Websockets are long-lived connections that are used by some Jupyter Server
 #  extensions.
-#  
+#
 #  Periodic pings help to detect disconnected clients and keep the connection
 #  active. If this is set to None, then no pings will be performed.
-#  
+#
 #  When a ping is sent, the client has ``websocket_ping_timeout`` seconds to
 #  respond. If no response is received within this period, the connection will be
 #  closed from the server side.
@@ -644,25 +644,25 @@ c.ServerApp.terminado_settings = {
 # c.ServerApp.websocket_ping_interval = 0
 
 ## Configure the websocket ping timeout in seconds.
-#  
+#
 #  See ``websocket_ping_interval`` for details.
 #  Default: 0
 # c.ServerApp.websocket_ping_timeout = 0
 
 ## The base URL for websockets,
 #          if it differs from the HTTP server (hint: it almost certainly doesn't).
-#  
+#
 #          Should be in the form of an HTTP origin: ws[s]://hostname[:port]
 #  Default: ''
 # c.ServerApp.websocket_url = ''
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # ConnectionFileMixin(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Mixin for configurable classes that work with connection files
 
 ## JSON file in which to store connection info [default: kernel-<pid>.json]
-#  
+#
 #      This file will contain the IP, ports, and authentication key needed to connect
 #      clients to this kernel. By default, this file will be created in the security dir
 #      of the current profile, but can be specified by absolute path.
@@ -700,11 +700,11 @@ c.ServerApp.terminado_settings = {
 #  Default: 'tcp'
 # c.ConnectionFileMixin.transport = 'tcp'
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # KernelManager(ConnectionFileMixin) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Manages a single kernel in a subprocess on this host.
-#  
+#
 #      This version starts kernels with Popen.
 
 ## Should we autorestart the kernel if it dies.
@@ -758,33 +758,33 @@ c.ServerApp.terminado_settings = {
 #  See also: ConnectionFileMixin.transport
 # c.KernelManager.transport = 'tcp'
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # Session(Configurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Object for handling serialization and sending of messages.
-#  
+#
 #      The Session object handles building messages and sending them
 #      with ZMQ sockets or ZMQStream objects.  Objects can communicate with each
 #      other over the network via Session objects, and only need to work with the
 #      dict-based IPython message spec. The Session will handle
 #      serialization/deserialization, security, and metadata.
-#  
+#
 #      Sessions support configurable serialization via packer/unpacker traits,
 #      and signing with HMAC digests via the key/keyfile traits.
-#  
+#
 #      Parameters
 #      ----------
-#  
+#
 #      debug : bool
 #          whether to trigger extra debugging statements
 #      packer/unpacker : str : 'json', 'pickle' or import_string
 #          importstrings for methods to serialize message parts.  If just
 #          'json' or 'pickle', predefined JSON and pickle packers will be used.
 #          Otherwise, the entire importstring must be used.
-#  
+#
 #          The functions must accept at least valid JSON input, and output
 #  *bytes*.
-#  
+#
 #          For example, to use msgpack:
 #          packer = 'msgpack.packb', unpacker='msgpack.unpackb'
 #      pack/unpack : callables
@@ -806,7 +806,7 @@ c.ServerApp.terminado_settings = {
 # c.Session.buffer_threshold = 1024
 
 ## Whether to check PID to protect against calls after fork.
-#  
+#
 #          This check can be disabled if fork-safety is handled elsewhere.
 #  Default: True
 # c.Session.check_pid = True
@@ -820,7 +820,7 @@ c.ServerApp.terminado_settings = {
 # c.Session.debug = False
 
 ## The maximum number of digests to remember.
-#  
+#
 #          The digest history will be culled when it exceeds this value.
 #  Default: 65536
 # c.Session.digest_history_size = 65536
@@ -867,9 +867,9 @@ c.ServerApp.terminado_settings = {
 #  Default: 'dclong'
 # c.Session.username = 'dclong'
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # MultiKernelManager(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A class for managing multiple kernels.
 
 ## The name of the default kernel to start
@@ -885,9 +885,9 @@ c.ServerApp.terminado_settings = {
 #  Default: True
 # c.MultiKernelManager.shared_context = True
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # MappingKernelManager(MultiKernelManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A KernelManager that handles
 #      - File mapping
 #      - HTTP error handling
@@ -904,10 +904,10 @@ c.ServerApp.terminado_settings = {
 
 ## Whether messages from kernels whose frontends have disconnected should be
 #  buffered in-memory.
-#  
+#
 #          When True (default), messages are buffered and replayed on reconnect,
 #          avoiding lost messages due to interrupted connectivity.
-#  
+#
 #          Disable if long-running kernels will produce too much output while
 #          no frontends are connected.
 #  Default: True
@@ -939,7 +939,7 @@ c.ServerApp.terminado_settings = {
 # c.MappingKernelManager.default_kernel_name = 'python3'
 
 ## Timeout for giving up on a kernel (in seconds).
-#  
+#
 #          On starting and restarting kernels, we check whether the
 #          kernel is running and responsive by sending kernel_info_requests.
 #          This sets the timeout in seconds for how long the kernel can take
@@ -965,19 +965,19 @@ c.ServerApp.terminado_settings = {
 # c.MappingKernelManager.traceback_replacement_message = 'An exception occurred at runtime, which is not shown due to security reasons.'
 
 ## List of kernel message types excluded from user activity tracking.
-#  
+#
 #          This should be a superset of the message types sent on any channel other
 #          than the shell channel.
 #  Default: ['comm_info_request', 'comm_info_reply', 'kernel_info_request', 'kernel_info_reply', 'shutdown_request', 'shutdown_reply', 'interrupt_request', 'interrupt_reply', 'debug_request', 'debug_reply', 'stream', 'display_data', 'update_display_data', 'execute_input', 'execute_result', 'error', 'status', 'clear_output', 'debug_event', 'input_request', 'input_reply']
 # c.MappingKernelManager.untracked_message_types = ['comm_info_request', 'comm_info_reply', 'kernel_info_request', 'kernel_info_reply', 'shutdown_request', 'shutdown_reply', 'interrupt_request', 'interrupt_reply', 'debug_request', 'debug_reply', 'stream', 'display_data', 'update_display_data', 'execute_input', 'execute_result', 'error', 'status', 'clear_output', 'debug_event', 'input_request', 'input_reply']
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # KernelSpecManager(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A manager for kernel specs.
 
 ## List of allowed kernel names.
-#  
+#
 #          By default, all installed kernels are allowed.
 #  Default: set()
 # c.KernelSpecManager.allowed_kernelspecs = set()
@@ -996,9 +996,9 @@ c.ServerApp.terminado_settings = {
 #  Default: set()
 # c.KernelSpecManager.whitelist = set()
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # AsyncMultiKernelManager(MultiKernelManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## The name of the default kernel to start
 #  See also: MultiKernelManager.default_kernel_name
 # c.AsyncMultiKernelManager.default_kernel_name = 'python3'
@@ -1017,9 +1017,9 @@ c.ServerApp.terminado_settings = {
 #  Default: False
 # c.AsyncMultiKernelManager.use_pending_kernels = False
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # AsyncMappingKernelManager(MappingKernelManager, AsyncMultiKernelManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## An asynchronous mapping kernel manager.
 
 ## Whether to send tracebacks to clients on exceptions.
@@ -1084,19 +1084,19 @@ c.ServerApp.terminado_settings = {
 #  See also: AsyncMultiKernelManager.use_pending_kernels
 # c.AsyncMappingKernelManager.use_pending_kernels = False
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # ContentsManager(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Base class for serving files and directories.
-#  
+#
 #      This serves any text or binary file,
 #      as well as directories,
 #      with special handling for JSON notebook documents.
-#  
+#
 #      Most APIs take a path argument,
 #      which is always an API-style unicode path,
 #      and always refers to a directory.
-#  
+#
 #      - unicode, not url-escaped
 #      - '/'-separated
 #      - leading and trailing '/' will be stripped
@@ -1120,19 +1120,19 @@ c.ServerApp.terminado_settings = {
 # c.ContentsManager.event_logger = None
 
 ## handler class to use when serving raw file requests.
-#  
+#
 #          Default is a fallback that talks to the ContentsManager API,
 #          which may be inefficient, especially for large files.
-#  
+#
 #          Local files-based ContentsManagers can use a StaticFileHandler subclass,
 #          which will be much more efficient.
-#  
+#
 #          Access to these files should be Authenticated.
 #  Default: 'jupyter_server.files.handlers.FilesHandler'
 # c.ContentsManager.files_handler_class = 'jupyter_server.files.handlers.FilesHandler'
 
 ## Extra parameters to pass to files_handler_class.
-#  
+#
 #          For example, StaticFileHandlers generally expect a `path` argument
 #          specifying the root directory from which to serve files.
 #  Default: {}
@@ -1143,16 +1143,16 @@ c.ServerApp.terminado_settings = {
 # c.ContentsManager.hide_globs = ['__pycache__', '*.pyc', '*.pyo', '.DS_Store', '*~']
 
 ## Python callable or importstring thereof
-#  
+#
 #          to be called on the path of a file just saved.
-#  
+#
 #          This can be used to process the file on disk,
 #          such as converting the notebook to a script or HTML via nbconvert.
-#  
+#
 #          It will be called as (all arguments passed by keyword)::
-#  
+#
 #              hook(os_path=os_path, model=model, contents_manager=instance)
-#  
+#
 #          - path: the filesystem path to the file just written
 #          - model: the model representing the file
 #          - contents_manager: this ContentsManager instance
@@ -1160,17 +1160,17 @@ c.ServerApp.terminado_settings = {
 # c.ContentsManager.post_save_hook = None
 
 ## Python callable or importstring thereof
-#  
+#
 #          To be called on a contents model prior to save.
-#  
+#
 #          This can be used to process the structure,
 #          such as removing notebook outputs or other side effects that
 #          should not be saved.
-#  
+#
 #          It will be called as (all arguments passed by keyword)::
-#  
+#
 #              hook(path=path, model=model, contents_manager=self)
-#  
+#
 #          - model: the model to be saved. Includes file contents.
 #            Modifying this dict will affect the file that is stored.
 #          - path: the API path of the save destination
@@ -1198,20 +1198,20 @@ c.ServerApp.terminado_settings = {
 #  Default: 'Untitled'
 # c.ContentsManager.untitled_notebook = 'Untitled'
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # FileManagerMixin(LoggingConfigurable, Configurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Mixin for ContentsAPI classes that interact with the filesystem.
-#  
+#
 #  Provides facilities for reading, writing, and copying files.
-#  
+#
 #  Shared by FileContentsManager and FileCheckpoints.
-#  
+#
 #  Note ---- Classes using this mixin must provide the following attributes:
-#  
+#
 #  root_dir : unicode
 #      A directory against against which API-style paths are to be resolved.
-#  
+#
 #  log : logging.Logger
 
 ## Hash algorithm to use for file content, support by hashlib
@@ -1225,9 +1225,9 @@ c.ServerApp.terminado_settings = {
 #  Default: True
 # c.FileManagerMixin.use_atomic_writing = True
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # FileContentsManager(FileManagerMixin, ContentsManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A file contents manager.
 
 ## Allow access to hidden files
@@ -1272,7 +1272,7 @@ c.ServerApp.terminado_settings = {
 #  See also: FileManagerMixin.hash_algorithm
 # c.FileContentsManager.hash_algorithm = 'sha256'
 
-## 
+##
 #  See also: ContentsManager.hide_globs
 # c.FileContentsManager.hide_globs = ['__pycache__', '*.pyc', '*.pyo', '.DS_Store', '*~']
 
@@ -1313,9 +1313,9 @@ c.ServerApp.terminado_settings = {
 #  See also: FileManagerMixin.use_atomic_writing
 # c.FileContentsManager.use_atomic_writing = True
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # AsyncContentsManager(ContentsManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Base class for serving files and directories asynchronously.
 
 ## Allow access to hidden files
@@ -1342,7 +1342,7 @@ c.ServerApp.terminado_settings = {
 #  See also: ContentsManager.files_handler_params
 # c.AsyncContentsManager.files_handler_params = {}
 
-## 
+##
 #  See also: ContentsManager.hide_globs
 # c.AsyncContentsManager.hide_globs = ['__pycache__', '*.pyc', '*.pyo', '.DS_Store', '*~']
 
@@ -1374,9 +1374,9 @@ c.ServerApp.terminado_settings = {
 #  See also: ContentsManager.untitled_notebook
 # c.AsyncContentsManager.untitled_notebook = 'Untitled'
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # AsyncFileManagerMixin(FileManagerMixin) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Mixin for ContentsAPI classes that interact with the filesystem
 #  asynchronously.
 
@@ -1389,9 +1389,9 @@ c.ServerApp.terminado_settings = {
 #  See also: FileManagerMixin.use_atomic_writing
 # c.AsyncFileManagerMixin.use_atomic_writing = True
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # AsyncFileContentsManager(FileContentsManager, AsyncFileManagerMixin, AsyncContentsManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## An async file contents manager.
 
 ## Allow access to hidden files
@@ -1430,7 +1430,7 @@ c.ServerApp.terminado_settings = {
 #  See also: FileManagerMixin.hash_algorithm
 # c.AsyncFileContentsManager.hash_algorithm = 'sha256'
 
-## 
+##
 #  See also: ContentsManager.hide_globs
 # c.AsyncFileContentsManager.hide_globs = ['__pycache__', '*.pyc', '*.pyo', '.DS_Store', '*~']
 
@@ -1471,9 +1471,9 @@ c.ServerApp.terminado_settings = {
 #  See also: FileManagerMixin.use_atomic_writing
 # c.AsyncFileContentsManager.use_atomic_writing = True
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # NotebookNotary(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A class for computing and verifying notebook signatures.
 
 ## The hashing algorithm used to sign notebooks.
@@ -1504,9 +1504,9 @@ c.ServerApp.terminado_settings = {
 #  Default: traitlets.Undefined
 # c.NotebookNotary.store_factory = traitlets.Undefined
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # GatewayMappingKernelManager(AsyncMappingKernelManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Kernel manager that supports remote kernels hosted by Jupyter Kernel or
 #  Enterprise Gateway.
 
@@ -1572,9 +1572,9 @@ c.ServerApp.terminado_settings = {
 #  See also: AsyncMultiKernelManager.use_pending_kernels
 # c.GatewayMappingKernelManager.use_pending_kernels = False
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # GatewayKernelSpecManager(KernelSpecManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A gateway kernel spec manager.
 
 ## List of allowed kernel names.
@@ -1593,9 +1593,9 @@ c.ServerApp.terminado_settings = {
 #  See also: KernelSpecManager.whitelist
 # c.GatewayKernelSpecManager.whitelist = set()
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # SessionManager(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A session manager.
 
 ## The filesystem path to SQLite Database file (e.g.
@@ -1605,9 +1605,9 @@ c.ServerApp.terminado_settings = {
 #  Default: ':memory:'
 # c.SessionManager.database_filepath = ':memory:'
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # GatewaySessionManager(SessionManager) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A gateway session manager.
 
 ## The filesystem path to SQLite Database file (e.g.
@@ -1617,9 +1617,9 @@ c.ServerApp.terminado_settings = {
 #  See also: SessionManager.database_filepath
 # c.GatewaySessionManager.database_filepath = ':memory:'
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # BaseKernelWebsocketConnection(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A configurable base class for connecting Kernel WebSockets to ZMQ sockets.
 
 ## Preferred kernel message protocol over websocket to use (default: None). If an
@@ -1632,9 +1632,9 @@ c.ServerApp.terminado_settings = {
 #  Default: None
 # c.BaseKernelWebsocketConnection.session = None
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # GatewayWebSocketConnection(BaseKernelWebsocketConnection) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## Web socket connection that proxies to a kernel/enterprise gateway.
 
 #  Default: ''
@@ -1643,9 +1643,9 @@ c.ServerApp.terminado_settings = {
 #  See also: BaseKernelWebsocketConnection.session
 # c.GatewayWebSocketConnection.session = None
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # GatewayClient(SingletonConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## This class manages the configuration.  It's its own singleton class so
 #      that we can share these values across all objects.  It also contains some
 #      options.
@@ -1667,13 +1667,13 @@ c.ServerApp.terminado_settings = {
 
 ## The authorization header's key name (typically 'Authorization') used in the
 #  HTTP headers. The header will be formatted as::
-#  
+#
 #  {'{auth_header_key}': '{auth_scheme} {auth_token}'}
-#  
+#
 #  If the authorization header key takes a single value, `auth_scheme` should be
 #  set to None and 'auth_token' should be configured to use the appropriate
 #  value.
-#  
+#
 #  (JUPYTER_GATEWAY_AUTH_HEADER_KEY env var)
 #  Default: ''
 # c.GatewayClient.auth_header_key = ''
@@ -1685,9 +1685,9 @@ c.ServerApp.terminado_settings = {
 
 ## The authorization token used in the HTTP headers. The header will be formatted
 #  as::
-#  
+#
 #  {'{auth_header_key}': '{auth_scheme} {auth_token}'}
-#  
+#
 #  (JUPYTER_GATEWAY_AUTH_TOKEN env var)
 #  Default: None
 # c.GatewayClient.auth_token = None
@@ -1797,24 +1797,24 @@ c.ServerApp.terminado_settings = {
 #  Default: None
 # c.GatewayClient.ws_url = None
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # EventLogger(LoggingConfigurable) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## An Event logger for emitting structured events.
-#  
+#
 #  Event schemas must be registered with the EventLogger using the
 #  `register_schema` or `register_schema_file` methods. Every schema will be
 #  validated against Jupyter Event's metaschema.
 
 ## A list of logging.Handler instances to send events to.
-#  
+#
 #          When set to None (the default), all events are discarded.
 #  Default: None
 # c.EventLogger.handlers = None
 
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 # ZMQChannelsWebsocketConnection(BaseKernelWebsocketConnection) configuration
-#------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 ## A Jupyter Server Websocket Connection
 
 ## (bytes/sec)

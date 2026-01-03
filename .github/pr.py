@@ -10,6 +10,7 @@
 """Create a PR from the specified branch to dev.
 The branch is updated (using dev) before creating the PR.
 """
+
 from argparse import ArgumentParser, Namespace
 from github_rest_api import Repository
 
