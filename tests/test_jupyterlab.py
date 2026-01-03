@@ -16,7 +16,7 @@ def test_launch():
             -v "$(pwd)":/workdir \
             -v "$(dirname $HOME)":/home_host \
             dclong/jupyterlab:next /scripts/sys/init.sh
-            """,
+            """.strip(),
         shell=True,
         check=True,
         capture_output=True,
