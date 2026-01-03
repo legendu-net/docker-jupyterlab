@@ -26,7 +26,7 @@ def strip_patch_version(version: str):
 
 
 def push_changes():
-    proc = sp.run("git status --porcelain", shell=True, check=True)
+    proc = sp.run("git status --porcelain", shell=True, check=True, capture_output=True)
     if proc.stdout:
         sp.run(
             """git add Dockerfile \
@@ -42,9 +42,10 @@ def push_changes():
 
 
 def update_version() -> None:
-    version = strip_patch_version(parse_latest_version())
+    version = parse_latest_version()
+    print(f"The latest version of JupyterLab is v{version}.")
     text = DOCKERFILE.read_text()
-    text = re.sub(r",<\d+\.\d+\.0", ",<" + version, text)
+    text = re.sub(r",<\d+\.\d+\.0", ",<" + strip_patch_version(version), text)
     DOCKERFILE.write_text(text)
 
 
