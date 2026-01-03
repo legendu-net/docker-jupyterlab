@@ -1,0 +1,14 @@
+name: Update JupyterLab Version
+on:
+  schedule:
+    - cron: '0 2 * * *'
+jobs:
+  update-jupyterlab-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install uv
+        run: curl -LsSf https://astral.sh/uv/install.sh | sh
+      - name: Run Python Script
+        run: .github/update_jupyterlab_version.py
+
