@@ -10,5 +10,9 @@ jobs:
       - name: Install uv
         run: curl -LsSf https://astral.sh/uv/install.sh | sh
       - name: Run Python Script
-        run: .github/update_jupyterlab_version.py
+        run: |
+          curl -sSL https://raw.githubusercontent.com/legendu-net/github_actions_scripts/main/update_version_dockerfile.py \
+            | uv run --script - \
+            --repo jupyterlab/jupyterlab \
+            --token ${{ secrets.GITHUBACTIONS }}
 
