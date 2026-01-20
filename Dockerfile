@@ -3,7 +3,7 @@ FROM dclong/python-nodejs
 # GIT: https://github.com/legendu-net/docker-python-nodejs.git
 
 RUN icon fish -iy
-RUN pip3 install --break-system-packages \
+RUN pip3 install \
       nbdime jinja2 nbconvert "jupyterlab>=2.1.0,<4.5.0" \
       jupyterlab_widgets ipywidgets jupyterlab_myst \
       jupyterlab-lsp python-lsp-server[all] \
