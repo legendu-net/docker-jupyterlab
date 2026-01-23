@@ -10,7 +10,7 @@ RUN pip3 install \
       jupyterlab-code-formatter \
       jupyterlab_vim \
       jupyter-resource-usage \
-      jupyter_ai \
+      jupyter_ai[all] \
     && jupyter labextension disable @axlair/jupyterlab_vim \
     && /scripts/sys/purge_cache.sh \
     && npm cache clean --force
